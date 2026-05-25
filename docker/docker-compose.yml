@@ -1,0 +1,19 @@
+services:
+ mysql:
+  image: mysql:8
+  container_name: mysql-container
+  restar: always
+
+  environment:
+   MYSQL_ROOT_PASWORD: 335412
+   MYSQL_DATABASE: meubanco
+
+  ports:
+   - "3306:3306"
+
+  volumes:
+   - mysql-prod-data:/var/lib/mysql
+
+volumes:
+ mysql-prod-data:
+
