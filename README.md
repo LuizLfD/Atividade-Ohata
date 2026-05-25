@@ -78,7 +78,7 @@ docker volume create mysql-prod-data
 ```bash
 docker run -d \
 --name mysql-container \
--e MYSQL_ROOT_PASSWORD=123456 \
+-e MYSQL_ROOT_PASSWORD=335412 \
 -e MYSQL_DATABASE=meubanco \
 -v mysql-prod-data:/var/lib/mysql \
 -p 3306:3306 \
@@ -128,7 +128,7 @@ Compreender técnicas de backup e recuperação de dados.
 
 ```bash
 docker exec mysql-container2 \
-mysqldump -u root -p123456 meubanco \
+mysqldump -u root -p335412 meubanco \
 > backups/cenario2/meubanco.sql
 ```
 
@@ -183,7 +183,7 @@ DATA=$(date +%Y-%m-%d_%H-%M-%S)
 mkdir -p backups/automaticos
 
 docker exec mysql-restored \
-mysqldump -u root -p123456 meubanco \
+mysqldump -u root -p335412 meubanco \
 > backups/automaticos/meubanco_$DATA.sql
 ```
 
